@@ -3,7 +3,6 @@ import Hero from "./Hero"
 import React from "react"
 import Image from "next/image"
 import google from "../../../public/google.png"
-import apple from "../../../public/apple.png"
 
 export default function SignUpPage() {
   return (
@@ -61,7 +60,7 @@ export default function SignUpPage() {
               Sign up with Google
             </button>
             <button className="w-full bg-gray-100 border text-black py-2 rounded mt-2 flex items-center justify-center">
-              <Image src={apple} alt="Apple" className="w-[24px] h-[24px] left-[16px] mr-2" />
+              <Image src={google} alt="Apple" className="w-[24px] h-[24px] left-[16px] mr-2" />
               Sign up with Apple
             </button>
           </div>
