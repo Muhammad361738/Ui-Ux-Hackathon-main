@@ -1,4 +1,8 @@
 import Image from "next/image";
+import about from "../../../public/about.png"
+import coffee from "../../../public/Coffee.png"
+import man from "../../../public/man.png"
+import student from "../../../public/Student.png"
 import { IoPlayOutline } from "react-icons/io5";
 
 
@@ -68,7 +72,7 @@ export default function Aboutus() {
           <Image
             className="mb-10 object-cover object-center w-1320px h-386px mt-1552px ml-300px mt-10"
             alt="hero"
-            src = "/about.png"
+            src = {about}
             width={1320} height={386}
           />
         </div>
@@ -81,7 +85,7 @@ export default function Aboutus() {
         <div className="h-full  flex justify-center items-center  flex-col border-2 rounded-lg overflow-hidden">
           <Image
         
-            src="/student.png"
+            src={student}
             width={80} height={80}
             alt="blog"
           />
@@ -98,7 +102,7 @@ export default function Aboutus() {
         <div className="h-full border-2 flex justify-center items-center  flex-col rounded-lg overflow-hidden">
           <Image
             className=""
-            src="/coffee.png"
+            src={coffee}
             width={80} height={80}
             alt="blog"
           />
@@ -115,7 +119,7 @@ export default function Aboutus() {
         <div className="h-full border-2  flex justify-center items-center  flex-col rounded-lg overflow-hidden">
           <Image
             className=" flex flex-col justify-center items-center"
-            src="/man.png"
+            src={man}
             width={80} height={80}
             alt="blog"
             
