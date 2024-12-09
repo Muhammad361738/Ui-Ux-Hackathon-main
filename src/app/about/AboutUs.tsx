@@ -4,7 +4,8 @@ import coffee from "../../../public/Coffee.png"
 import man from "../../../public/man.png"
 import student from "../../../public/Student.png"
 import { IoPlayOutline } from "react-icons/io5";
-
+import youget from "../../../public/youget.png"
+import youget2 from "../../../public/youget2.png"
 
 export default function Aboutus() {
   return (
@@ -24,15 +25,15 @@ export default function Aboutus() {
             <Image
               className="object-cover object-center w-309px h-271px mt-584px ml-660px radius-6px"
               alt="image2"
-              src="/youget.png"
+              src={youget}
               width={309} height={271}
             />
             {/* Bottom Image */}
             <Image
               className="object-cover object-center w-309px h-382px mt-882px ml-660px radius-6px"
               alt="image3"
-              src="/youget2.png"
-              width={309} height={382}
+              src={youget2}
+              width={309} height={271}
             />
           </div>
           {/* Text Content and Buttons */}

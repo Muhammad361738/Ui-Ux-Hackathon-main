@@ -6,6 +6,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Menu, X } from 'lucide-react'
 
+
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -62,13 +63,13 @@ export default function Navbar() {
 
         {/* Icons */}
         <div className="hidden lg:flex items-center gap-4">
-          <Link href="/" className="text-white hover:text-[#FF9F0D] transition-colors">
+          <Link href="" className="text-white hover:text-[#FF9F0D] transition-colors">
             <Image src="/search.png" alt="search" width={24} height={24} />
           </Link>
-          <Link href="/" className="text-white hover:text-[#FF9F0D] transition-colors">
+          <Link href="/LogIn" className="text-white hover:text-[#FF9F0D] transition-colors">
             <Image src="/user.png" alt="user" width={24} height={24} />
           </Link>
-          <Link href="/" className="text-white hover:text-[#FF9F0D] transition-colors">
+          <Link href="" className="text-white hover:text-[#FF9F0D] transition-colors">
             <Image src="/tote.png" alt="cart" width={24} height={24} />
           </Link>
         </div>

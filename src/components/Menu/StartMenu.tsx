@@ -39,6 +39,7 @@ export default function StarterMenu() {
           </div>
         </div>
       </div>
+      
     </section>
   );
 }
