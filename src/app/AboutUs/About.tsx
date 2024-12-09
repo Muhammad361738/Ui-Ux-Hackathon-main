@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { FaCheck } from "react-icons/fa6";
-import About1 from "../../../public/ab1.png"
+import Ab1 from "../../../public/ab1.png"
 import About2 from "../../../public/about2.png"
-import About3 from "../../../public/ab3.png"
+import Ab3 from "../../../public/ab3.png"
 
 function AboutUs() {
   return (
@@ -47,7 +47,7 @@ function AboutUs() {
           {/* First Image (Responsive) */}
           <div className="relative w-[320px] sm:w-[320px] md:w-[450px] lg:w-[450px]  h-[200px] mb-4 lg:mb-0">
             <Image
-              src={About1}
+              src={Ab1}
               alt="About Image 1"
               className="object-cover w-[320px] h-auto rounded-[6px_0px_0px_0px] opacity-100"
               layout="responsive"
@@ -69,7 +69,7 @@ function AboutUs() {
             </div>
             <div className="relative w-full sm:w-[300px] md:w-[322px] lg:w-[322px] xl:w-[350px] h-[auto]">
               <Image
-                src={About3}
+                src={Ab3}
                 alt="About Image 3"
                 className="object-cover rounded-[6px_0px_0px_0px] opacity-100"
                 layout="responsive"
