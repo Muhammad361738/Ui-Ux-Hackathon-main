@@ -1,16 +1,15 @@
 import React from 'react'
 import Image from 'next/image'
-import { FaCheck } from 'react-icons/fa6'
 import FoodCategory from '../foodcatagery/page'
-import foodpic1 from "../../../public/foodpic1.jpeg"
-import foodpic2 from "../../../public/foodpic2.jpeg"
-import foodpic3 from "../../../public/foodpic3.jpeg"
+import Meet from '../Meet/MeetChef'
 import AboutUs from "../AboutUs/About"
+import Experience from '@/components/Experience/Experience'
+import MyManu from "../MyManu/Menu"
 
 function HomePage() {
   return (
     <>
-    <section className='bg-black px-3 md:px-[135px] flex flex-col justify-evenly md:flex-row  md:items-center py-[50px]'>
+    <section className='bg-black  pt-20 lg:pt-40 px-3 md:px-[135px] flex flex-col justify-evenly lg:flex-row  md:items-center py-[50px]'>
         {/* Heading */}
         <div className='text-white w-full md:w-[50%]'>
   <h1 className='md:text-[32px] text-[24px] font-normal text-[#FF9F0D] font whitespace-nowrap'>
@@ -47,14 +46,12 @@ function HomePage() {
 
         </div>
     </section>
-      
+      <AboutUs/>
+      <FoodCategory/>
 
-      {/* Image */}
-
-
-
-
-     
+      <Experience/>
+      <MyManu/>
+      <Meet/>
     <FoodCategory/>
     </>
   )

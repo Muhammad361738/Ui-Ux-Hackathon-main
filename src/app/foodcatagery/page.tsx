@@ -11,7 +11,7 @@ const FoodCategory = () => {
   ];
 
   return (
-    <section className="bg-black text-white py-16 px-6">
+    <section className="bg-black text-white py-16 px-20">
       <div className="container mx-auto text-center">
         {/* Title */}
         <h2 className="text-3xl md:text-4xl font-bold mb-12">

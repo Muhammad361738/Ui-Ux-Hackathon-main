@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { FaCheck } from "react-icons/fa6";
-import About1 from "../../../public/About1.png"
-import About2 from "../../../public/About2.png"
-import About3 from "../../../public/About3.png"
+import About1 from "../../../public/ab1.png"
+import About2 from "../../../public/about2.png"
+import About3 from "../../../public/ab3.png"
 
 function AboutUs() {
   return (

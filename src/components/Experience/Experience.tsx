@@ -10,17 +10,17 @@ export default function Experience() {
       <div className="absolute inset-0 bg-black bg-opacity-85"></div>
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap justify-between items-center text-center">
+        <div className="flex flex-wrap  justify-between items-center text-center">
           {ExperienceItem.map((item, index) => (
             <div 
               key={index} 
-              className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 mb-8 sm:mb-10 lg:mb-12 flex flex-col justify-center items-center"
+              className="w-full h-[200px] sm:w-1/2 lg:w-1/3 xl:w-1/4 mb-8 sm:mb-10 lg:mb-12 flex flex-col justify-center items-center"
             >
               <div>
                 <Image
                   src={item.src}
                   alt={item.label}  // Descriptive alt text based on item
-                  width={120}
+                  width={100}
                   height={120}
                   className="mb-6 sm:mb-8 lg:mb-10"
                 />
