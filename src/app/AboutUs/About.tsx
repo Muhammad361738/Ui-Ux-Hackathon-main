@@ -43,7 +43,7 @@ function AboutUs() {
         </div>
 
         {/* Image Section */}
-        <div className="flex flex-col  lg:w-[50%] justify-center items-center">
+        <div className=" flex flex-col  lg:w-[50%] justify-center items-center">
           {/* First Image (Responsive) */}
           <div className="relative w-[320px] sm:w-[320px] md:w-[450px] lg:w-[450px]  h-[200px] mb-4 lg:mb-0">
             <Image
@@ -56,7 +56,7 @@ function AboutUs() {
           </div>
 
           {/* Two Images in Row */}
-          <div className="flex flex-col md:flex-row gap-5 lg:flex-row mt-[16px] lg:mt-[45px] w-full justify-between">
+          <div className="flex flex-col items-center md:flex-row gap-5 lg:flex-row mt-[16px] lg:mt-[45px] w-full justify-between">
             <div className="relative w-full sm:w-[300px] md:w-[322px] lg:w-[322px] xl:w-[350px] h-[auto] mb-4 md:mb-0">
               <Image
                 src={About2}

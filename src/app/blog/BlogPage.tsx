@@ -1,365 +1,227 @@
-'use client';
-import b1 from "../../../public/b1.png"
-import b2 from "../../../public/b2.png"
-import b3 from "../../../public/b3.png"
-import b4 from "../../../public/b4.png"
-import b5 from "../../../public/b5.png"
-import b6 from "../../../public/b6.png"
-import b7 from "../../../public/b7.png"
-import b8 from "../../../public/b8.png"
-import b9 from "../../../public/b9.png"
-import b10 from "../../../public/b10.png"
-import b11 from "../../../public/b11.png"
-import b12 from "../../../public/b12.png"
-import b13 from "../../../public/b13.png"
-import b14 from "../../../public/b14.png"
-import b15 from "../../../public/b15.png"
-import b16 from "../../../public/b16.png"
-import b17 from "../../../public/b17.png"
-import b18 from "../../../public/b18.png"
-import b19 from "../../../public/b19.png"
-import Image from 'next/image';
-export default function BlogPage() {
-    return(
-        <>
-        {/* // Main div  */}
-       
-<div className='w-[1920px] h-[3800px] top-0  bg-white flex'>
-    <div className='w-[872px] h-[980px] pt-[130px] mx-[300px] bg-white'>
+import React from "react";
+import BlogCard from "./BlogCard";
+import Image from "next/image";
+import { Button } from "@/components/ui/Button";
+import { Input } from "@/components/ui/input";
+import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
+import { SiPixelfed } from "react-icons/si";
 
-        {/* First Image */}
-        <Image 
-        src={b1}
-        alt=''
-        width={872}
-        height={530}
-        className='mt-10'
-        />
-        <div className='flex mt-3'>
-            <Image 
-            src={b5}
-            alt=''
-            width={23.97}
-            height={24}
-            className='cursor-pointer'
-            />
-            <Image 
-            src={b6}
-            alt=''
-            width={267}
-            height={24}
-            className='cursor-pointer'
-            />
-        </div>
-        <h1 className='font-bold text-2xl w-[504px] h-8 bg-white py-[46px] text-[#333333]'>10 Reasons To Do A Digital Detox challenge</h1>
-        <p className='w-[647.26px] h-[96px] py-[40px] bg-white'>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
-        <button className='w-[172px] h-[52px] rounded-[6px] border-[1px] mt-[80px] ]py-[14px] px-[32px] text-orange-400 border-orange-400'>Read More</button>
-        
-         {/* Second Image */}
-         
-        <Image 
-        src={b2}
-        alt=''
-        width={872}
-        height={530}
-        className='mt-10'
-        />
+const HeroPage = () => {
+  const filterMenu = [
+    {
+      id: 1,
+      image: "/manu6.png",
+      title: "Chicken Fry",
+      available: "26",
+    },
+    {
+      id: 2,
+      image: "/manu3.png",
+      title: "Burger Food",
+      available: "46",
+    },
+    {
+      id: 3,
+      image: "/pizza.png",
+      title: "Pizza",
+      available: "16",
+    },
+    {
+      id: 4,
+      image: "/menu.png",
+      title: "Fresh Fruits",
+      available: "36",
+    },
+    {
+      id: 5,
+      image: "/menu11.png",
+      title: "Vegetables",
+      available: "16",
+    },
+  ];
 
-<div className='flex mt-3'>
-            <Image 
-            src={b8}
-            alt=''
-            width={23.97}
-            height={24}
-            className='cursor-pointer'
-            />
-            <Image 
-            src={b9}
-            alt=''
-            width={267}
-            height={24}
-            className='cursor-pointer'
-            />
-        </div>
+  const recentPosts = [
+    { image: "/manu3.png", date: "June 22, 2020" },
+    { image: "/manu4.png", date: "June 23, 2020" },
+    { image: "/manu5.png", date: "June 24, 2020" },
+    { image: "/manu6.png", date: "June 25, 2020" }
+  ];
 
-        <h1 className='font-bold text-2xl w-[504px] h-8 bg-white py-[46px] text-[#333333]'>10 Reasons To Do A Digital Detox challenge</h1>
-        <p className='w-[647.26px] h-[96px] py-[40px] bg-white'>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
-        <button className='w-[172px] ease-in-out duration-500 h-[52px] rounded-[6px] border-[1px] mt-[80px] ]py-[14px] px-[32px] text-orange-400 border-orange-400'>Read More</button>
-        
-        {/* Third image */}
+  const galleryImages = ["about.png", "about1.png", "dessert.png", "drinks.png", "youget.png", "youget2.png"];
 
-        <Image 
-        src={b3}
-        alt=''
-        width={872}
-        height={530}
-        className='mt-10'
-        />
-         <div className='flex mt-3'>
-            <Image 
-            src={b10}
-            alt=''
-            width={23.97}
-            height={24}
-            className='cursor-pointer'
-            />
-            <Image 
-            src={b11}
-            alt=''
-            width={267}
-            height={24}
-            className='cursor-pointer'
-            />
-        </div>
+  return (
+    <div className="min-h-screen">
+      <section className="container mx-auto px-4 py-8 md:py-12">
+        <div className="flex flex-col lg:flex-row gap-6 md:gap-8">
+          {/* Blog Cards Column */}
+          <div className="flex-1 space-y-6 md:space-y-8">
+            {[1, 2, 3, 4].map((i) => (
+              <BlogCard key={i} imageSrc={`/about${i}.png`} />
+            ))}
+          </div>
 
-        <h1 className='font-bold text-2xl w-[504px] h-8 bg-white py-[46px] text-[#333333]'>The Ultimate Hangover Burger: Egg in a Hole Burger</h1>
-        <p className='w-[647.26px] h-[96px] py-[40px] bg-white'>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea ta
-            kimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
-        <button className='w-[172px] h-[52px] ease-in-out duration-500 rounded-[6px] border-[1px] mt-[80px] ]py-[14px] px-[32px] text-orange-400 border-orange-400'>Read More</button>
-       
-        {/* Fourth Image */}
-
-        <Image 
-        src={b4}
-        alt=''
-        width={872}
-        height={530}
-        className='mt-10'
-        />
-
-<div className='flex mt-3'>
-            <Image 
-            src={b13}
-            alt=''
-            width={23.97}
-            height={24}
-            className='cursor-pointer'
-            />
-            <Image 
-            src={b14}
-            alt=''
-            width={267}
-            height={24}
-            className='cursor-pointer'
-            />
-        </div>
-
-
-        <h1 className='font-bold text-2xl w-[504px] h-8 bg-white py-[46px] text-[#333333]'>10 Reasons To Do A Digital Detox challenge</h1>
-        <p className='w-[647.26px] h-[96px] py-[40px] bg-white'>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
-        <button className='w-[172px] ease-in-out duration-500 h-[52px] rounded-[6px] border-[1px] mt-[80px] ]py-[14px] px-[32px] text-orange-400 border-orange-400'>Read More</button>
-    </div>
-
-    <div className='w-[424px] mt-[130px]  h-[2501px]'>
-        <div className='flex justify-center mt-8 w-[421.82px] border-1 h-[70px]'>
-
-            <input 
-            placeholder='Search Your Keyword'
-            type="text"
-            className='w-[350px] px-3 py-3 bg-zinc-100 border-lg border-gray-300 '
-            />
-            <button className='w-[76px] ease-in-out duration-500  h-[69px] cursor-pointer justify-center bg-[#FF9F0D]'>     
-           <Image 
-            src={b15}
-            alt=''
-            width={24}
-            height={24}
-            className='ml-6'
-            />
-            </button>
-
-            
-
-            </div>
-
-            <Image 
-            src={b16}
-            alt=''
-            width={424}
-            height={423}
-            className='mt-5'
-            />
-            <div className='justify-center mt-8 w-[423px] h-[592px] border-[1px] border-gray-400'>
-
-            <h1 className='text-lg w-[200px] font-bold h-[28px] py-5 px-8'>Recent Posts</h1>
-            
-               <Image 
-               src={b17}
-               alt=''
-               width={323}
-               height={107}
-               className='ml-8 mt-5 cursor-pointer'
-               />
-
-               
-               <Image 
-               src={b18}
-               alt=''
-               width={323}
-               height={107}
-               className='ml-8 mt-5 cursor-pointer'
-               />
-
-               <Image 
-               src={b19}
-               alt=''
-               width={323}
-               height={107}
-               className='cursor-pointer mt-5 ml-8 '
-               />
-
-               
-               <Image 
-               src={b19}
-               alt=''
-               width={323}
-               height={107}
-               className='ml-8 mt-5 cursor-pointer'
-               />
-
-
-            </div>
-
-            <div className='justify-center mt-8 w-[423px] h-[592px] border-[1px] border-gray-400'>
-
-            <h1 className='text-lg w-[200px] h-[28p] py-5 px-8 font-bold'>Filter By Menu</h1>
-            
-               <Image 
-               src={b19}
-               alt=''
-               width={323}
-               height={62}
-               className='ml-8 mt-5 cursor-pointer'
-               />
-
-               
-               <Image 
-               src={b19}
-               alt=''
-               width={323}
-               height={62}
-               className='ml-8 mt-5 cursor-pointer'
-               />
-
-               <Image 
-               src={b19}
-               alt=''
-               width={323}
-               height={62}
-               className='cursor-pointer ml-8 mt-5'
-               />
-
-               
-               <Image 
-               src={b19}
-               alt=''
-               width={323}
-               height={62}
-               className='ml-8 mt-5 cursor-pointer'
-               />
-
-               <Image 
-               src={b19}
-               alt=''
-               width={323}
-               height={62}
-               className='ml-8 mt-2 cursor-pointer'
-               />
-
-
-            </div>
-
-            <div className='w-[423px] mt-10 h-[308px] border-[1px] border-gray-400'>
-              <div className='w-[325px] h-[244px] py-10 ml-10 cursor-pointer' > 
-
-              <Image 
-              src={b19}
-              alt=''
-              width={325}
-              height={244}
+          {/* Sidebar */}
+          <div className="w-full lg:w-[425px] space-y-6 md:space-y-8">
+            {/* Search Bar */}
+            <div className="relative">
+              <Input
+                type="text"
+                placeholder="Search Your Keyword"
+                className="w-full h-14 md:h-[70px] pl-6 pr-16 border border-gray-700 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-[#FF9F0D] focus:border-transparent"
               />
-                 
+              <Button className="absolute right-0 top-0 h-full w-16 bg-[#FF9F0D] rounded-r-lg hover:bg-[#e88f0c] transition-colors">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </Button>
+            </div>
+
+            {/* Profile Card */}
+            <div className="bg-gray-800 p-6 md:p-8 rounded-lg text-center">
+              <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto mb-6">
+                <Image
+                  src="/whiteman.png"
+                  alt="Profile"
+                  fill
+                  className="rounded-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-2">
+                Prince Miyako
+              </h3>
+              <div className="flex justify-center text-[#FF9F0D] mb-4">
+                {"★".repeat(5)}
+                <span className="text-gray-400 ml-2">(1 Review)</span>
+              </div>
+              <p className="text-gray-400 mb-6 text-sm md:text-base">
+                This is a sample paragraph text describing the user or any
+                additional details you want to include.
+              </p>
+              <div className="flex justify-center space-x-3 md:space-x-4">
+                {[FaFacebook, FaTwitter, FaInstagram].map((Icon, index) => (
+                  <Button
+                    key={index}
+                    className="p-2 md:p-3 bg-gray-700 rounded-full hover:bg-[#FF9F0D] transition-colors duration-300"
+                  >
+                    <Icon className="text-white text-lg md:text-xl" />
+                  </Button>
+                ))}
               </div>
             </div>
 
-            <div className='w-[422px] mt-10 border-[1px] border-[#E0E0E0] h-[316px]'>
-              <div className='w-[362px] mt-7 ml-5 h-[252px] '>
-              <div  className='flex w-[362px] h-[126px]'>                  <Image 
-                   src={b19}
-                   alt=''
-                   width={110}
-                   height={92}
-                   className='ml-2 cursor-pointer'
-                   />
-
-                  <Image 
-                   src={b12}
-                   alt='img'
-                   width={110}
-                   height={92}
-                   className='ml-2 cursor-pointer'
-                   />
-                   
-
-                   <Image 
-                   src={b7}
-                   alt='img'
-                   width={110}
-                   height={92}
-                   className='ml-2 cursor-pointer'
-                   />
-                   
-                   </div>
-
-                   
-
-                   <div  className='flex mt-5 w-[362px] h-[126px]'> 
-                   <Image 
-                   src={b19}
-                   alt=''
-                   width={110}
-                   height={92}
-                   className='ml-2 cursor-pointer'
-                   />
-
-                  <Image 
-                   src={b19}
-                   alt=''
-                   width={110}
-                   height={92}
-                   className='ml-2 cursor-pointer'
-                   />
-                   
-
-                   <Image 
-                   src={b19}
-                   alt=''
-                   width={110}
-                   height={92}
-                   className='ml-2 cursor-pointer'
-                   />
-                   
-                   </div>
+            {/* Recent Posts */}
+            <div className="bg-white border border-gray-300 p-4 md:p-6 rounded-lg">
+              <h2 className="font-bold text-lg md:text-xl mb-4">Recent Posts</h2>
+              <div className="space-y-4">
+                {recentPosts.map((post, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="w-24 h-24 relative rounded-lg overflow-hidden">
+                      <Image
+                        src={`${post.image}`}
+                        alt="Post"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium mb-2">{post.date}</p>
+                      <p className="text-sm md:text-base">
+                        Lorem ipsum dolor sit cing elit, sed do.
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className='mt-10 border-[1px] border-[] w-[422px] h-[158px] items-center'>
-                <div className='w-[308px] mt-[25px] ml-10 h-[94px] items-center cursor-pointer'>
-                  <h1 className='text-2xl font-bold'>Follow us</h1>
-                    <Image 
-                    src='/icons.png'
-                    alt=''
-                    width={308}
-                    height={46.5}
-                    className='mt-5'
+            {/* Filter By Menu */}
+            <div className="bg-white border border-gray-300 p-4 md:p-6 rounded-lg">
+              <h3 className="text-lg md:text-xl font-bold mb-4">Filter By Menu</h3>
+              <div className="space-y-4">
+                {filterMenu.map((item) => (
+                  <div key={item.id} className="flex items-center space-x-4">
+                    <div className="relative w-20 h-20 md:w-24 md:h-24">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-cover rounded-lg"
+                      />
+                    </div>
+                    <div className="flex-1 flex justify-between items-center">
+                      <h4 className="text-sm md:text-base font-semibold">{item.title}</h4>
+                      <p className="text-sm text-gray-600">{item.available}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Popular Tags */}
+            <div className="bg-white border border-gray-300 p-4 md:p-6 rounded-lg">
+              <h2 className="font-bold text-lg md:text-xl mb-4">Popular Tags</h2>
+              <div className="flex flex-wrap gap-2">
+                {["Burger", "Pizza", "Sandwich", "Pasta", "Fries", "Shake", "Salad", "Soup", "Tacos", "Burrito", "Nachos", "Wrap"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 text-sm bg-amber-500 rounded-md cursor-pointer hover:bg-amber-400 transition-colors"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Photo Gallery */}
+            <div className="bg-white border border-gray-300 p-4 md:p-6 rounded-lg">
+              <h2 className="font-bold text-lg md:text-xl mb-4">Photo Gallery</h2>
+              <div className="grid grid-cols-3 gap-4">
+                {galleryImages.map((image, index) => (
+                  <div key={index} className="aspect-square relative rounded-lg overflow-hidden">
+                    <Image
+                      src={`/${image}`}
+                      alt={`Gallery ${index + 1}`}
+                      fill
+                      className="object-cover"
                     />
-                </div>
+                  </div>
+                ))}
+              </div>
             </div>
-  
-    </div>
 
-</div>
-</>
-    )
-}
-    
+            {/* Social Media */}
+            <div className="bg-white border border-gray-300 p-4 md:p-6 rounded-lg text-center">
+              <h2 className="text-xl md:text-2xl font-bold mb-4">Follow Us</h2>
+              <div className="flex justify-center gap-4">
+                {[
+                  { Icon: FaFacebook, bg: "bg-[#C4C4C4]" },
+                  { Icon: FaYoutube, bg: "bg-[#C4C4C4]" },
+                  { Icon: FaInstagram, bg: "bg-[#FF9F0D]" },
+                  { Icon: SiPixelfed, bg: "bg-[#C4C4C4]" },
+                  { Icon: FaTwitter, bg: "bg-[#C4C4C4]" }
+                ].map(({ Icon, bg }, index) => (
+                  <div key={index} className={`${bg} p-3 rounded-full cursor-pointer hover:opacity-80 transition-opacity`}>
+                    <Icon className="text-xl md:text-2xl" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default HeroPage;

@@ -48,7 +48,6 @@ function HomePage() {
     </section>
       <AboutUs/>
       <FoodCategory/>
-
       <Experience/>
       <MyManu/>
       <Meet/>

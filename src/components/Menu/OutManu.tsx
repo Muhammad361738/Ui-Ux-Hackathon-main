@@ -17,7 +17,7 @@ const chefs = [
 
 const ChefGrid = () => {
   return (
-    <div className="p-6 mt-20"> {/* Adding mt-20 for margin top */}
+    <div className="p-6 mt-2"> {/* Adding mt-20 for margin top */}
       {/* Grid with responsive columns */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6">
         {chefs.map((chef, index) => (
