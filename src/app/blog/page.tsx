@@ -1,7 +1,7 @@
 import React from 'react'
 import Hero from './Hero'
 import Blogpage from './Blogpage'
-const BlogPage = () => {
+const HomePage = () => {
   return (
     <div className='overflow-hidden'>
       <Hero />
@@ -10,4 +10,4 @@ const BlogPage = () => {
   )
 }
 
-export default BlogPage
+export default HomePage
