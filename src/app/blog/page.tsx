@@ -1,11 +1,11 @@
 import React from 'react'
 import Hero from './Hero'
-import Blogpage from './Blogpage'
+import Blog from './Blog'
 const HomePage = () => {
   return (
     <div className='overflow-hidden'>
       <Hero />
-      <Blogpage/>
+      <Blog/>
     </div>
   )
 }
