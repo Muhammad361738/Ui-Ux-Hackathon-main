@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
 import { SiPixelfed } from "react-icons/si";
 
-const HeroPage = () => {
+const Blogpage = () => {
   const filterMenu = [
     {
       id: 1,
@@ -224,4 +224,4 @@ const HeroPage = () => {
   );
 };
 
-export default HeroPage;
+export default Blogpage;
