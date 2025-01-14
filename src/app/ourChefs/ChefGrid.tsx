@@ -2,18 +2,18 @@ import React from "react";
 import Image from "next/image"
 
 const chefs = [
-  { name: "Tahmina Rumi", role: "Chef", image: "../../../public/chef1.jpeg" },
-  { name: "Jorina Begum", role: "Chef", image: "../../../public/chef2.jpeg" },
-  { name: "M. Mohammad", role: "Chef", image: "../../../public/chef3.jpeg" },
-  { name: "Munna Kathy", role: "Chef", image: "../../../public/chef4.jpeg" },
-  { name: "Tahmina Rumi", role: "Cook", image: "../../../public/chef5.jpeg" },
-  { name: "Bisnu Devgon", role: "Chef", image: "/../../../public/chef6.jpeg" },
-  { name: "Motin Molladst", role: "Chef", image: "../../../public/chef7.jpeg" },
-  { name: "William Rumi", role: "Chef", image: "../../../public/chef8.jpeg" },
-  { name: "Kets William Roy", role: "Chef", image: "../../../public/chef9.jpeg" },
-  { name: "Mahmud Kholil", role: "Chef", image: "/../../../public/chef10.jpeg" },
-  { name: "Ataur Rahman", role: "Chef", image: "/../../../public/chef11.jpeg" },
-  { name: "Monalisa Holly", role: "Chef", image: "/../../../public/chef12.jpeg" },
+  { name: "Tahmina Rumi", role: "Chef", image: "../../../public/o1.png" },
+  { name: "Jorina Begum", role: "Chef", image: "../../../public/o2.png" },
+  { name: "M. Mohammad", role: "Chef", image: "../../../public/o3.png" },
+  { name: "Munna Kathy", role: "Chef", image: "../../../public/o4.png" },
+  { name: "Tahmina Rumi", role: "Cook", image: "../../../public/o5.png" },
+  { name: "Bisnu Devgon", role: "Chef", image: "/../../../public/o6.png" },
+  { name: "Motin Molladst", role: "Chef", image: "../../../public/o7.png" },
+  { name: "William Rumi", role: "Chef", image: "../../../public/o8.png" },
+  { name: "Kets William Roy", role: "Chef", image: "../../../public/o9.png" },
+  { name: "Mahmud Kholil", role: "Chef", image: "/../../../public/o10.png" },
+  { name: "Ataur Rahman", role: "Chef", image: "/../../../public/o11.png" },
+  { name: "Monalisa Holly", role: "Chef", image: "/../../../public/o12.png" },
 ];
 
 const ChefGrid = () => {
