@@ -232,3 +232,14 @@
 // };
 
 // export default Page;
+import React from "react";
+
+const ProductPage = ({ params }: { params: { id: string } }) => {
+  return (
+    <div>
+      <h1>Product ID: {params.id}</h1>
+    </div>
+  );
+};
+
+export default ProductPage;
