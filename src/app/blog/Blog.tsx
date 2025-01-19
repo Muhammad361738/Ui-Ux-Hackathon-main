@@ -1,7 +1,7 @@
 import React from "react";
 import BlogCard from "./BlogCard";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/input";
 import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
 import { SiPixelfed } from "react-icons/si";
