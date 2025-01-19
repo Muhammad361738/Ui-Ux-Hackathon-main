@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 
@@ -83,7 +83,7 @@ const ShopDetailPage = () => {
       <p className="text-green-600 font-semibold my-2">
         Price: ${product.price.toFixed(2)}
       </p>
-      <img
+      <Image
         src={product.imageUrl}
         alt={product.name}
         className="w-full max-w-md rounded shadow"

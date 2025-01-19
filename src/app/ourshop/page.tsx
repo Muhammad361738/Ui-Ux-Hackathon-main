@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
@@ -48,9 +48,13 @@ const SanityData = () => {
         }
 
         setFoods(result.result || []);
-      } catch (err: any) {
+      } catch (err: unknown) {
         console.error("Error fetching data:", err);
-        setError(err.message || "An unexpected error occurred");
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unexpected error occurred");
+        }
       } finally {
         setLoading(false);
       }
@@ -80,7 +84,7 @@ const SanityData = () => {
     <div className="bg-gray-50 py-10">
       <div className="container mx-auto px-4">
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
-          
+          Our Menu
         </h1>
         {foods.length === 0 ? (
           <p className="text-center text-lg font-medium text-gray-500">
@@ -95,11 +99,13 @@ const SanityData = () => {
               >
                 <Link href={`/ourshop/${food._id}`}>
                   <div className="relative h-[300px] w-full bg-gray-100 overflow-hidden group">
-                    <img
+                    <Image
                       src={food.imageUrl}
                       alt={food.name}
                       className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
                       loading="lazy"
+                      width={500}
+                      height={300}
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
                   </div>
@@ -135,4 +141,4 @@ const SanityData = () => {
   );
 };
 
-export default SanityData;
+export default SanityData;

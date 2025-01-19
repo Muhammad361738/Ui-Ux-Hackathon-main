@@ -2,14 +2,14 @@
 import { menuItems } from '@/constant/Menu'
 import { Coffee } from 'lucide-react'
 import Heading from '../Heading/Heading'
-
+import Image from 'next/image'
 export default function Dessert() {
   return (
     <section className="w-full mx-auto mt-[80px] sm:mt-[120px] px-4">
       <div className="container mx-auto py-10 sm:py-16 flex flex-col md:flex-row gap-8 md:gap-[112px]">
         {/* Image Section */}
         <div className="w-full md:w-[448px] mb-6 md:mb-0">
-          <img 
+          <Image 
             src="/dessert.png" 
             alt="Dessert dish" 
             width={448}
