@@ -16,12 +16,12 @@ export default function Navbar() {
     { name: "Blog", href: "/blog" },
     { name: "Pages", href: "/pages" },
     { name: "About", href: "/about" },
-    { name: "Shop", href: "/ourshop" },
+    { name: "Shop", href: "/ourshops" },
     { name: "Contact", href: "/contact" },
   ]
 
   return (
-    <header className="w-full z-10 bg-[#0D0D0D] fixed top-0 px-4 sm:px-6 lg:px-[15.62%] py-4 lg:py-7">
+    <header className="w-full z-50 bg-[#0D0D0D] fixed top-0 px-4 sm:px-6 lg:px-[15.62%] py-4 lg:py-7">
       <nav className="flex items-center justify-between">
         {/* Logo */}
         <Link
@@ -66,13 +66,10 @@ export default function Navbar() {
           <Link href="" className="text-white hover:text-[#FF9F0D] transition-colors">
             <Image src="/search.png" alt="search" width={24} height={24} />
           </Link>
-          <Link href="/login
-          
-          
-          4" className="text-white hover:text-[#FF9F0D] transition-colors">
+          <Link href="/login" className="text-white hover:text-[#FF9F0D] transition-colors">
             <Image src="/User.png" alt="user" width={24} height={24} />
           </Link>
-          <Link href="" className="text-white hover:text-[#FF9F0D] transition-colors">
+          <Link href="/cart" className="text-white hover:text-[#FF9F0D] transition-colors">
             <Image src="/Tote.png" alt="cart" width={24} height={24} />
           </Link>
         </div>
