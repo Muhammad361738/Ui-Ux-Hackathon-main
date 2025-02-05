@@ -1,3 +1,5 @@
+
+
 export default {
   name: 'food',
   type: 'document',
@@ -25,6 +27,11 @@ export default {
       type: 'number',
       title: 'Original Price',
       description: 'Price before discount (if any)',
+    },
+    {
+      name : "inventory",
+      title : 'Inventory',
+      type : "number"
     },
     {
       name: 'tags',

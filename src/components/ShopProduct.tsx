@@ -20,6 +20,7 @@ interface Food {
   _updatedAt: string;
 }
 
+
 const ShopProduct = () => {
   const [foods, setFoods] = useState<Food[]>([]);
   const [filteredFoods, setFilteredFoods] = useState<Food[]>([]);
@@ -137,7 +138,7 @@ const ShopProduct = () => {
                         <p className="text-lg font-medium text-green-600">
                           ${food.price.toFixed(2)}
                         </p>
-                        <p className="text-sm line-through text-gray-500">
+                        <p className="text-sm line-through text-gray-500 ">
                           ${food.originalPrice.toFixed(2)}
                         </p>
                       </div>
@@ -145,8 +146,10 @@ const ShopProduct = () => {
                         <p>
                           Category:{" "}
                           <span className="font-medium">{food.category}</span>
+                         
                         </p>
                       </div>
+                      
                     </div>
                   </Link>
                 </li>

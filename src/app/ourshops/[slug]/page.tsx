@@ -1,13 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useCart } from "../../../components/CartContext";
+import React, { useEffect, useState } from "react";
+// import { useCart } from "../../../components/CartContext";
 import { useParams } from "next/navigation";
 import HeroSection from "../../../components/HeroSection";
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
+import { Product } from "@/types/product";
+import { addTocart } from "@/app/actions/action";
+import Swal from 'sweetalert2';
 
 interface ProductDetail {
+  id: string;
+  image : string;
+  inventory : number;
   slug: string;
   name: string;
   description: string;
@@ -16,37 +22,59 @@ interface ProductDetail {
   largeImage: string;
   status: string;
   rating: number;
+  
 }
 
+//  Experience  Of Ad to  Cart  ***********************************
+const HandleAddToCart = (e: React.MouseEvent , product : Product) => {
+  e.preventDefault()
+  Swal.fire({
+    position : "top-right",
+    icon : "success",
+    title: `${product.name} Add to cart`,
+    showConfirmButton : false,
+    timer : 2000
+
+  })
+  addTocart(product)
+}
+
+
+
+
+
+
+
+//  End Of Experience **********************************************
 const ShopDetailPage = () => {
   const params = useParams();
   const { slug } = params;
-  const { addToCart } = useCart();
+  // const { addToCart } = useCart();
   const [product, setProduct] = useState<ProductDetail | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [quantity, setQuantity] = useState(1);
-  const [message, setMessage] = useState("");
+  // const [quantity, setQuantity] = useState(1);
+  // const [message, setMessage] = useState("");
 
-  const increaseQuantity = () => setQuantity((prev) => prev + 1);
-  const decreaseQuantity = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+  // const increaseQuantity = () => setQuantity((prev) => prev + 1);
+  // const decreaseQuantity = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
-  const handleAddtoCart = () => {
-    if (product) {
-      addToCart({
-        id: product.slug,
-        name: product.name,
-        price: product.price,
-        quantity,
-        rating: product.rating || 0,
-        image: product.imageUrl,
-        largeImage: product.largeImage || product.imageUrl,
-        status: product.status || "available",
-      });
-      setMessage("Item added to cart successfully!");
-      setTimeout(() => setMessage(""), 3000);
-    }
-  };
+  // const handleAddtoCart = () => {
+  //   if (product) {
+  //     addToCart({
+  //       id: product.slug,
+  //       name: product.name,
+  //       price: product.price,
+  //       quantity,
+  //       rating: product.rating || 0,
+  //       image: product.imageUrl,
+  //       largeImage: product.largeImage || product.imageUrl,
+  //       status: product.status || "available",
+  //     });
+  //     setMessage("Item added to cart successfully!");
+  //     setTimeout(() => setMessage(""), 3000);
+  //   }
+  // };
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -143,7 +171,7 @@ const ShopDetailPage = () => {
           </p>
 
           {/* Quantity Adjuster */}
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
             <button onClick={decreaseQuantity} className="px-3 py-1 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">
               -
             </button>
@@ -151,18 +179,19 @@ const ShopDetailPage = () => {
             <button onClick={increaseQuantity} className="px-3 py-1 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">
               +
             </button>
-          </div>
+          </div> */}
 
           {/* Add to Cart Button */}
           <button
-            onClick={handleAddtoCart}
+            // onClick={handleAddtoCart}
+            onClick={(e) => HandleAddToCart(e , product)}
             className="px-6 py-2 bg-[#FF9F0D] text-white font-medium text-lg rounded hover:bg-[#e68a00] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF9F0D]"
           >
             Add to Cart
           </button>
 
           {/* Success Message */}
-          {message && <p className="text-green-600 mt-2">{message}</p>}
+          {/* {message && <p className="text-green-600 mt-2">{message}</p>} */}
         </div>
       </div>
     </div>
