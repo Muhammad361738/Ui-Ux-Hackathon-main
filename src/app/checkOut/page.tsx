@@ -670,7 +670,6 @@ import { getCartItem } from '../actions/action'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
 import { ChevronRight } from 'lucide-react'
-import Hero from "../checkout/Hero"
 
 function Page() {
   const [cartItems, setCartItems] = useState<Product[]>([])
@@ -733,7 +732,6 @@ function Page() {
 
   return (
     <>
-    <Hero/>
     <div className='min-h-screen mt-32 text-black bg-gray-100 dark:bg-gray-900 p-6'>
       
       <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
