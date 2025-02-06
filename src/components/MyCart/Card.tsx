@@ -78,8 +78,8 @@ function Cart() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-32">
-      <h2 className="text-2xl font-semibold mb-32 text-black text-center">Shopping Cart</h2>
+    <div className="container mx-auto px-4 py-2">
+      <h2 className="text-2xl font-semibold mb-2 text-black text-center">Shopping Cart</h2>
 
       {/* Cart items */}
       <div>
