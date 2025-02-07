@@ -670,7 +670,8 @@ import { getCartItem } from '../actions/action'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
 import { ChevronRight } from 'lucide-react'
-
+import { client } from '@/sanity/lib/client'
+import Swal from 'sweetalert2'
 function Page() {
   const [cartItems, setCartItems] = useState<Product[]>([])
   const [discount, setDiscount] = useState<number>(0)
@@ -724,11 +725,54 @@ function Page() {
     return Object.values(error).every((error) => !error)
   }
 
-  const handlePlaceOrder = () => {
+  const handlePlaceOrder = async () => {
     if (validationForm()) {
-      localStorage.removeItem('appliedDiscount')
+        // Show SweetAlert confirmation before proceeding
+        const result = await Swal.fire({
+            title: "Proceed to checkout",
+            text: "Please review your cart before checkout",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Proceed!",
+        });
+
+        // If the user confirms the order, proceed with order creation
+        if (result.isConfirmed) {
+            // Create order data
+            const orderData = {
+                _type: 'order',
+                firstName: formValues.firstName,
+                lastName: formValues.lastName,
+                address: formValues.address,
+                city: formValues.city,
+                zipcode: formValues.zipCode,
+                phone: formValues.phone, // Fixed to use formValues.phone instead of formValues.zipCode
+                email: formValues.email,
+                cartItems: cartItems.map((item) => ({
+                    _type: 'reference',
+                    _ref: item.id,
+                })),
+                total: subTotal - discount,
+                discount: discount,
+                orderDate: new Date().toISOString(),
+            };
+
+            try {
+                // Create order in Sanity database
+                await client.create(orderData);
+                localStorage.removeItem('appliedDiscount');
+                
+                // Show success message
+                Swal.fire("Success!", "Your order has been successfully processed.", "success");
+            } catch (error) {
+                console.error('Error creating order', error);
+                Swal.fire("Error!", "There was a problem processing your order.", "error");
+            }
+        }
     }
-  }
+};
 
   return (
     <>
@@ -748,7 +792,7 @@ function Page() {
         <h2 className='text-2xl font-semibold text-darkYellow mb-4'>Order Summary</h2>
         {cartItems.length > 0 ? (
           cartItems.map((item) => (
-            <div key={item.id} className='flex flex-col sm:flex-row items-center gap-4 border-b border-gray-300 dark:border-gray-700 py-4'>
+            <div key={`${item.id}-${item.name}`} className='flex flex-col sm:flex-row items-center gap-4 border-b border-gray-300 dark:border-gray-700 py-4'>
               {item.image && (
                 <Image
                   src={urlFor(item.image).url()}
