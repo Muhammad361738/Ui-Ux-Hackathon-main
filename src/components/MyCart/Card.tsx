@@ -88,57 +88,58 @@ function Cart() {
 
       {/* Cart items */}
       <div>
-        {cartItems.length === 0 ? (
-          <div className="text-center text-lg text-black">Your cart is empty.</div>
-        ) : (
-          cartItems.map((item) => (
-            <div
-              key={item.id} // Unique key for each cart item
-              className="flex items-center justify-between p-4 border border-gray-300 rounded-lg shadow-sm"
-            >
-              <div className="flex items-center space-x-4">
-                {item.image && (
-                  <Image
-                    src={urlFor(item.image).url()}
-                    alt={item.name}
-                    className="w-24 h-24 object-cover rounded-md"
-                    width={500}
-                    height={500}
-                  />
-                )}
-                <div>
-                  <h3 className="font-semibold">{item.name}</h3>
-                  <p className="text-sm text-gray-600">${item.price}</p>
-                </div>
-              </div>
-
-              {/* Quantity controls */}
-              <div className="flex items-center space-x-2">
-                <button
-                  onClick={() => handleDecrement(item.id)}
-                  className="px-3 py-1 text-sm font-semibold bg-gray-200 text-gray-700 rounded hover:bg-gray-300"
-                >
-                  -
-                </button>
-                <span className="text-lg font-medium">{item.inventory}</span>
-                <button
-                  onClick={() => handleIncrement(item.id)}
-                  className="px-3 py-1 text-sm font-semibold bg-gray-200 text-gray-700 rounded hover:bg-gray-300"
-                >
-                  +
-                </button>
-              </div>
-
-              {/* Remove Button */}
-              <button
-                onClick={() => handleRemove(item.id)}
-                className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
-              >
-                Remove
-              </button>
-            </div>
-          ))
+      {cartItems.length === 0 ? (
+  <div className="text-center text-lg text-black">Your cart is empty.</div>
+) : (
+  cartItems.map((item, index) => (
+    <div
+      key={item.id || index} // Ensure unique key
+      className="flex items-center justify-between p-4 border border-gray-300 rounded-lg shadow-sm"
+    >
+      <div className="flex items-center space-x-4">
+        {item.image && (
+          <Image
+            src={urlFor(item.image).url()}
+            alt={item.name}
+            className="w-24 h-24 object-cover rounded-md"
+            width={500}
+            height={500}
+          />
         )}
+        <div>
+          <h3 className="font-semibold">{item.name}</h3>
+          <p className="text-sm text-gray-600">${item.price}</p>
+        </div>
+      </div>
+
+      {/* Quantity controls */}
+      <div className="flex items-center space-x-2">
+        <button
+          onClick={() => handleDecrement(item.id)}
+          className="px-3 py-1 text-sm font-semibold bg-gray-200 text-gray-700 rounded hover:bg-gray-300"
+        >
+          -
+        </button>
+        <span className="text-lg font-medium">{item.inventory}</span>
+        <button
+          onClick={() => handleIncrement(item.id)}
+          className="px-3 py-1 text-sm font-semibold bg-gray-200 text-gray-700 rounded hover:bg-gray-300"
+        >
+          +
+        </button>
+      </div>
+
+      {/* Remove Button */}
+      <button
+        onClick={() => handleRemove(item.id)}
+        className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+      >
+        Remove
+      </button>
+    </div>
+  ))
+)}
+
       </div>
 
       {/* Total and Proceed to Checkout */}
